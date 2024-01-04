@@ -1,92 +1,51 @@
 # Greet Bot
+Project Objective
+1.	To develop a robot that can recognize the face of a person and greet him/her in real time.
+2.	The robot should give the directions of certain locations when asked.
 
+Project Details
+When the robot detects the human using the Mediapipe person pose library, it will move towards it by following a black line. After reaching near to the person, his/her face is detected using the Mediapipe face mesh library. This ML model detected 468 landmarks on the face of a person. An algorithm has been developed to reorient the camera of the robot so that the detected face is in the middle of the camera. If multiple faces are present in the video frame, then the camera is reoriented such that maximum number of faces are in the camera frame. Face recognition is performed using the face recognition library of python. The comparison will be made using 128 features between the person on the camera frame and the person in the database. Our system will interact with people around using Natural Language Processing. The audio input is done through the microphone and a real time audio processing is performed to get the output sentence.
 
+Block diagram of working of the robot (Face Recognition and Greeting)
+ 
+Working Videos:
+1.	Tracking algorithm to tracks the face of the person
+https://drive.google.com/file/d/1l6zYVzZll-iYgvyrnrfNwLvh6kwmOmh3/view?usp=sharing
+2.	Working video of face recognition
+https://drive.google.com/file/d/1IinYFmgeuvjoJxyFn3UbzyuMBFPyYGVj/view?usp=sharing
 
-## Getting started
+Fund Details
+1.	Cost for all the items (Face Recognition and Greeting)
+ITEM	REQUIREMENT	COST (Approx.)
+RDS3115 Servo with servo mount brackets x2	Mounted at the top of the body for 2 degrees of freedom of camera	Rs. 5,500
+1080p camera x2	One camera will be mounted with servos.
+Second camera will be installed on the back of the robot so that it can detect persons behind it	Rs. 8,000
+USB Speaker	For greeting the person
+with his/her name.	Rs. 1,000
+USB Microphone	For capturing person’s name	Rs. 3,000
+NVIDIA Jetson Nano	Making a small CPU+GPU for the robot that will contain all the required codes, the database and will perform image processing	Rs. 15,000
+Arduino Mega	All logical operations will be performed by this microcontroller.	Rs. 3,000
+Power bank (5V,3Amp)	To power up jetson nano	 To be decided
+Miscellaneous		10,000
+Total	Rs. 45,500/-
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+2.	Cost for all the items used in Locomotion 
+ITEM	REQUIREMENT	COST
+Long threaded rod (Diameter-5mm, length-500mm) x6	To connect all the chassis of the robot	Rs. 2,400/-
+M5 nuts	To fasten the threaded rods	Rs. 1,000/-
+M5 washers	To fasten the threaded rods	Rs. 500/-
+A4988 motor drivers x2	For powering motors	Rs. 1,500/-
+LIPO battery 	For powering motor driver	To be decided
+RLS-08 Line sensor array	To detect black line	Rs. 1,000
+Jumper wires	To connect electronic components	Rs. 600/-
+Wheels	Used for locomotion	To be decided
+Nema 17 Stepper motor x2	For moving the robot as it provides better precision and is less noisy than DC motor	Rs. 2,000
+Clamps x2	Used for connecting motors to the chassis of the robot	Rs. 400/-
+Miscellaneous 		Rs. 1,100/-
+Total	Rs. 10,500/-
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/robolution/greet-bot.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/robolution/greet-bot/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Future Scope:
+1.	The robot can be further utilized as an AI personal assistant that can assist with daily tasks, provide reminders.
+2.	The robot serves as a valuable support system for elderly individuals and those with special abilities, providing assistance and offering companionship.
+3.	The robot can serve as a receptionist enhancing Efficiency and Providing Interactive Experiences for Consumers.
+4.	The robot can act as a personalized tutor, adapting teaching methods to individual learning styles.
