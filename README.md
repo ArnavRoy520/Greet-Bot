@@ -49,3 +49,6 @@ Future Scope:
 2.	The robot serves as a valuable support system for elderly individuals and those with special abilities, providing assistance and offering companionship.
 3.	The robot can serve as a receptionist enhancing Efficiency and Providing Interactive Experiences for Consumers.
 4.	The robot can act as a personalized tutor, adapting teaching methods to individual learning styles.
+
+
+![image](https://github.com/ArnavRoy520/Greet-Bot/assets/143030580/70c8ac58-02b8-48fa-bf90-13ca37670d88)
